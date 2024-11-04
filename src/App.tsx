@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import NotFound from "./components/Errors/Not-Found";
 import { useContext } from "react";
 import { AuthContext } from "./components/context/AuthProvider";
+import SnackbarCustom from "./components/Errors/SnackbarCustom";
 
 function App() {
   const { isAuthenticated } = useContext(AuthContext);
@@ -35,9 +36,11 @@ function App() {
             element={<AuthProtectedRoute element={<About />} />}
           />
           <Route path="/login" element={<Login />} />
-          <Route path="**" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+
+      <SnackbarCustom />
     </>
   );
 }

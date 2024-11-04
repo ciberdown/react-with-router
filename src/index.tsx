@@ -1,16 +1,16 @@
 import "bootstrap/dist/css/bootstrap.css";
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import AuthProvider from "./components/context/AuthProvider";
+import SnackbarProvider from "./components/context/SnackbarProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <AuthProvider>
+  <AuthProvider>
+    <SnackbarProvider>
       <App />
-    </AuthProvider>
-  </React.StrictMode>
+    </SnackbarProvider>
+  </AuthProvider>
 );
